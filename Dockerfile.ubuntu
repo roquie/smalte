@@ -1,4 +1,4 @@
-FROM nimlang/nim:0.18.0-ubuntu-slim as build
+FROM nimlang/nim:0.18.0-ubuntu as build
 
 WORKDIR /usr/src/app
 COPY . /usr/src/app
