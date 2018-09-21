@@ -4,6 +4,8 @@ Smalte
 Smalte -- is a **smal**l **t**emplate **e**ngine. Specially designed
 for configure application before start in Docker. This is best replacement for envsubset.
 
+Written in [nim-lang](https://nim-lang.org) and compiled to C. Binary size 197kb.
+
 ## Usage
 
 ```bash
@@ -18,6 +20,10 @@ Other values (like $url in Nginx config) will be skipped.
 Also if $url not defined and Smalte using in global mode $url also will be skipped.
 
 Examples can be found in the tests folder.
+
+## Depends
+
+* libpcre
 
 ## Docker
 
