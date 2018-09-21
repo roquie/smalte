@@ -1,0 +1,2 @@
+This is FOOBAR for scope1? -> FOOBAR
+This is FOOBAR for scope2? -> FOOBAR
