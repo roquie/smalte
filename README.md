@@ -4,7 +4,7 @@ Smalte
 [![CircleCI](https://circleci.com/gh/roquie/smalte.svg?style=svg)](https://circleci.com/gh/roquie/smalte)
 
 Smalte -- is a **smal**l **t**emplate **e**ngine. Specially designed
-for configure application before start in Docker. This is best replacement for envsubset.
+for configure application before start in Docker. This is best replacement for envsubset. [Example of usage](https://github.com/roquie/docker-php-webapp/blob/master/conf/start.sh#L28).
 
 Written in [nim-lang](https://nim-lang.org) and compiled to C. Fast. Binary size (197kb).
 
