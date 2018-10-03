@@ -1,0 +1,31 @@
+server {
+    listen       $PORT;
+    server_name  localhost;
+    root $NGINX_WEBROOT;
+
+    client_header_timeout $NGINX_CLIENT_HEADER_TIMEOUT;
+    client_body_timeout $NGINX_CLIENT_BODY_TIMEOUT;
+    client_max_body_size $NGINX_MAX_BODY_SIZE;
+
+    location / {
+        try_files $uri $uri/ @rewrites;
+    }
+
+    location @rewrites {
+        rewrite ^(.+)$ /index.html last;
+    }
+
+    location ~* \.(?:ico|css|js|gif|jpe?g|png)$ {
+        # Some basic cache-control for static files to be sent to the browser
+        expires max;
+        add_header Pragma public;
+        add_header Cache-Control "public, must-revalidate, proxy-revalidate";
+    }
+
+    # redirect server error pages to the static page /50x.html
+    #
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   $NGINX_WEBROOT;
+    }
+}
